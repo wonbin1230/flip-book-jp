@@ -1,7 +1,7 @@
 let pageURLs = [];
+const pageQuantity = 86;
 $(document).ready(async function () {
 	pageURLs = await fetchURL();
-	const pageQuantity = 84;
 	initialViewport();
 	loadApp(pageQuantity);
 	bindControlEvents(pageQuantity);
@@ -12,7 +12,7 @@ let currentPageText = "";
 let currentPage = 1;
 
 const fetchURL = async () => {
-	const url = `https://sheets.googleapis.com/v4/spreadsheets/1wHbKFxn839JaTb5YhS0g3-cv9_ypZHeKGcY60_00WyQ/values/'jp'!A2:B85?key=AIzaSyCDfQdbfcR68abAb62u5GI1DGmJuOBO0gs`
+	const url = `https://sheets.googleapis.com/v4/spreadsheets/1wHbKFxn839JaTb5YhS0g3-cv9_ypZHeKGcY60_00WyQ/values/'jp'!A2:B87?key=AIzaSyCDfQdbfcR68abAb62u5GI1DGmJuOBO0gs`
 	const res = await fetch(url)
 	const data = await res.json()
 	return data.values.map((e) => {
@@ -254,7 +254,7 @@ function resizeFn() {
 		const newFlipbook = $(`<div id="flipbook"></div>`);
 		$(".pagination-next").before(newFlipbook);
 		initialViewport();
-		loadApp(124);
+		loadApp(pageQuantity);
 		$("#canvas").fadeIn(2000);
 		$("#flipbook").turn("page", toPage)
 		zoomInit();
