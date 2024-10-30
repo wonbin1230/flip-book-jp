@@ -7,7 +7,7 @@ $(document).ready(async function () {
 	bindControlEvents(pageQuantity);
 	$("#canvas").fadeIn(2000);
 });
-
+//123456
 let currentPageText = "";
 let currentPage = 1;
 
